@@ -1,0 +1,49 @@
+body {
+  background: #ece7e7;
+}
+
+.header {
+    width: 100%;
+    background-color: #fff;
+    &__container {
+        display: flex;
+    }
+}
+
+.content-wrapper__content {
+    background-image: url(../src/images/bkg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    &__screen-1 {
+        &__sap-hybris-text {
+            font-size: 34px;
+            font-family: "Open Sans";
+            color: #fff;
+        }
+        &__block-2__subpair {
+            display: flex;
+            margin-bottom: 22px;
+        }
+        &__text {
+            margin-left: 15px;
+            font-size: 24px;
+            font-family: "Open Sans";
+            color: #fff;
+        }
+        &__block-3__subpair {
+            width: 125px;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+            &__text {
+                margin-top: 18px;
+                text-align: center;
+                font-size: 20px;
+                font-family: "Open Sans";
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+}
