@@ -78,6 +78,20 @@ and (min-width : 768px) and (max-width : 1365px) {
 				&__sap-hybris-logo {
 					margin: 12px 0 30px 0;
 				}
+                &__sap-hybris-text {
+                    max-width: 640px;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 34px;
+                    font-family: "Open Sans";
+                    color: rgb(255, 255, 255);
+                    line-height: 1.2;
+                }
+				&__block-1 {}
+				&__block-2 {
+                    max-width: 530px;
+                    margin: 75px auto;
+                }
 				&__block-3 {
 					&__subpair {
 						margin: 0 85px;
@@ -97,7 +111,7 @@ and (min-width : 768px) and (max-width : 1365px) {
 			display: flex;
 			flex-flow: row;
 			justify-content: center;
-			padding: 36px 0 47px 0;
+			padding: 36px 0 0 0;
 			&__pair {
 				display: flex;
 				flex-flow: column;
