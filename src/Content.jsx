@@ -59,6 +59,19 @@ export default class Content extends React.Component {
                           </div>
                       </div>
                   </section>
+                  <section className='content-wrapper__content__screen-2'>
+                      <div className='content-wrapper__content__screen-2__form'>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
+                              <input className='input input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
+                          </div>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
+                              <button className='button button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                          </div>
+                      </div>
+                  </section>
+
               </div>
           </div>
       </div>

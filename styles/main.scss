@@ -3,10 +3,21 @@ body {
 }
 
 .header {
+    position: fixed;
     width: 100%;
     background-color: #fff;
     &__container {
         display: flex;
+        &__norbit-logo,
+        &__sap-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        &__menu-button {
+            
+        }
+
     }
 }
 
@@ -45,5 +56,48 @@ body {
                 color: rgb(255, 255, 255);
             }
         }
+    }
+    &__screen-2 {
+        margin-top: 70px;
+        background-color: #363636;
+        &__form {
+            // display: flex;
+            // flex-flow: column;
+            // padding: 36px 0 47px 0;
+            &__pair {
+                // display: flex;
+                // flex-flow: column;
+                // align-items: center;
+            }
+        }
+    }
+}
+
+.input {
+    width: 255px;
+    height: 40px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    border: 0px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-family: "Open Sans";
+}
+
+.button {
+    justify-content: center;
+    width: 260px;
+    height: 40px;
+    border-radius: 30px;
+    border: 0px;
+    font-size: 16px;
+    font-family: "Open Sans";
+    // background-color: rgb(2, 175, 239); // синий
+    background-color: rgb(204, 204, 204);
+    transition: all .18s ease-in-out;
+    &:hover {
+        background-color: rgb(2, 151, 206);
+        transition: all .12s ease-in-out;
     }
 }
