@@ -3,6 +3,7 @@ $default_regular:  "Open Sans Regular";
 
 body {
   background: #fff;
+  overflow-x:  hidden;
 }
 
 .header {
@@ -81,8 +82,8 @@ body {
             z-index: 0;
         }
         &__header-text {
-            width: 310px;
             font-size: 24px;
+            // width: 310px;
             position: absolute;
             left: 50%;
             font-family: $default_light;
@@ -139,6 +140,24 @@ body {
         }
         &-orange {
             background-color: #F6F4F1;
+        }
+    }
+    &__screen-5 {
+        &__block {
+            margin-top: 45px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            &__text {
+                margin-top: 25px;
+                font-family: $default_light;
+                font-size: 20px;
+                padding: 0 20px;
+                text-align: center;
+            }
+        }
+        &__scheme-block {
+            padding: 50px 20px;
         }
     }
     &__colored-list {

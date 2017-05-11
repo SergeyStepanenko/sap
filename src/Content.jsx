@@ -200,6 +200,31 @@ export default class Content extends React.Component {
                           </div>
                       </div>
                   </section>
+
+                  <section className='content-wrapper__content__screen-5'>
+                      <div className='content-wrapper__content__screen-5__wrapper'>
+                          <div className='content-wrapper__content__screen-3__line'></div>
+                          <p className='content-wrapper__content__screen-3__header-text header-fix'>Выгоды от внедрения SAP Hybris</p>
+                          <p className='content-wrapper__content__screen-3__space'></p>
+                      </div>
+                      <div className='content-wrapper__content__screen-5__blocks-wrapper'>
+                          <div className='content-wrapper__content__screen-5__block'>
+                              <img className='content-wrapper__content__screen-5__block__img' src={require('./images/conversion-icon.png')} alt='' height='93px' width='93px'/>
+                              <p className='content-wrapper__content__screen-5__block__text'>Повышение омникальной конверсии</p>
+                          </div>
+                          <div className='content-wrapper__content__screen-5__block'>
+                              <img className='content-wrapper__content__screen-5__block__img' src={require('./images/wallet-icon.png')} alt='' height='93px' width='93px'/>
+                              <p className='content-wrapper__content__screen-5__block__text'>Увеличение среднего чека</p>
+                          </div>
+                          <div className='content-wrapper__content__screen-5__block'>
+                              <img className='content-wrapper__content__screen-5__block__img' src={require('./images/decrising-icon.png')} alt='' height='93px' width='93px'/>
+                              <p className='content-wrapper__content__screen-5__block__text'>Снижение ТСО омникальной платформы</p>
+                          </div>
+                      </div>
+                      <div className='content-wrapper__content__screen-5__scheme-block'>
+                          <img className='content-wrapper__content__screen-5__scheme-block__img-small' src={require('./images/scheme-small.png')} alt='' height='' width='100%'/>
+                      </div>
+                  </section>
               </div>
           </div>
       </div>
