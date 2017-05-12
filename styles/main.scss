@@ -80,6 +80,13 @@ body {
             margin: 0 17px;
             border: 1px solid #363636;
             z-index: 0;
+            &-white {
+                position: relative;
+                top: 46px;
+                margin: 0 17px;
+                border: 1px solid #fff;
+                z-index: 0;
+            }
         }
         &__header-text {
             font-size: 24px;
@@ -160,6 +167,69 @@ body {
             padding: 50px 20px;
         }
     }
+    &__screen-6 {
+        background-image: url(../src/images/bkg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        padding-bottom: 50px;
+        &__wrapper {
+            &__container {
+                width: 300px;
+                height: 358px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                padding: 5px;
+                box-sizing: border-box;
+                background-color: rgba(212, 212, 212, 0.25);
+                border-radius: 6px;
+                &__img {
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                    padding: 40px 0 10px 0;
+                }
+                &__text {
+                    font-family: $default_regular;
+                    font-size: 20px;
+                    text-align: center;
+                    color: #fff;
+                    margin: 5px 0 28px 0;
+                }
+            }
+        }
+    }
+    &__screen-7 {
+        &__wrapper {
+            &__header {}
+            &__container {
+                max-width: 320px;
+                margin: 0 auto;
+                padding-bottom: 25px;
+                &__wrapper {
+                    display: flex;
+                    &__block {
+                        &-1 {
+
+                        }
+                        &-2 {
+                            &_1 {
+                                font: 16px $default_regular;
+                                margin-bottom: 10px;
+                            }
+                            &_2 {
+                                font: 14px $default_regular;
+                            }
+                        }
+                    }
+                    div img {
+                        margin: 0 15px;
+                    }
+
+                }
+            }
+        }
+    }
     &__colored-list {
         margin-left: 40px;
         li {
@@ -182,6 +252,9 @@ body {
 }
 .orange {
     color: #EF993B;
+}
+.white {
+    color: #fff;
 }
 .padding {
     padding-bottom: 45px;

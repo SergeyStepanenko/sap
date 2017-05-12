@@ -226,5 +226,13 @@ and (min-width : 768px) and (max-width : 1365px) {
                 margin-left: -200px;
             }
         }
+        &__screen-6 {
+            &__wrapper {
+                display: flex;
+                justify-content: center;
+                max-width: 1120px;
+                margin: 0 auto;
+            }
+        }
 	}
 }

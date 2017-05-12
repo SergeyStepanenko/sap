@@ -1,13 +1,13 @@
 import React from 'react';
-import PopUp from './PopUp.jsx';
+// import PopUp from './PopUp.jsx';
 
 import '../styles/index.scss';
 
 export default class Content extends React.Component {
-    showPopUp() {
-        document.getElementById('popUp').className = 'visible';
-        document.body.style.overflow = "hidden";
-    }
+    // showPopUp() {
+    //     document.getElementById('popUp').className = 'visible';
+    //     document.body.style.overflow = "hidden";
+    // }
     render() {
     return (
       <div>
@@ -243,9 +243,95 @@ export default class Content extends React.Component {
                           </div>
                       </div>
                   </section>
+
+                  <section className='content-wrapper__content__screen-6'>
+                      <div className='content-wrapper__content__screen-6__header'>
+                          <div className='content-wrapper__content__screen-3__line-white'></div>
+                          <p className='content-wrapper__content__screen-3__header-text'>Почему Норбит</p>
+                          <p className='content-wrapper__content__screen-3__space'></p>
+                      </div>
+                      <div className='content-wrapper__content__screen-6__wrapper'>
+                          <div className='content-wrapper__content__screen-6__wrapper__container'>
+                              <img className='content-wrapper__content__screen-6__wrapper__container__img' src={require('./images/stars-icon.png')} alt='' height='' width='80px'/>
+                              <p className='content-wrapper__content__screen-6__wrapper__container__text'>Опыт</p>
+                              <div className='content-wrapper__content__colored-list white'>
+                                  <ul>
+                                      <li>Более 16 лет на рынке</li>
+                                      <li>Из них 12 лет SAP Gold Partner</li>
+                                      <li>Наработанный проектный портфель SAP Hybris в России</li>
+                                      <li>Кроссотраслевые решения и методики</li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div className='content-wrapper__content__screen-6__wrapper__container'>
+                              <img className='content-wrapper__content__screen-6__wrapper__container__img' src={require('./images/like-icon.png')} alt='' height='' width='59px'/>
+                              <p className='content-wrapper__content__screen-6__wrapper__container__text'>Опыт</p>
+                              <div className='content-wrapper__content__colored-list white'>
+                                  <ul>
+                                      <li>500+ проектов</li>
+                                      <li>Рекомендации клиентов</li>
+                                      <li>Стабильная проектная команда экспертов-практиков</li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div className='content-wrapper__content__screen-6__wrapper__container'>
+                              <img className='content-wrapper__content__screen-6__wrapper__container__img' src={require('./images/sheld-icon.png')} alt='' height='' width='46px'/>
+                              <p className='content-wrapper__content__screen-6__wrapper__container__text'>Гарантии</p>
+                              <div className='content-wrapper__content__colored-list white'>
+                                  <ul>
+                                      <li>Собственный центр технической поддержки</li>
+                                      <li>Гарантийный постропроектный период – 12 месяцев</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+
+                  <section className='content-wrapper__content__screen-7'>
+                      <div className='content-wrapper__content__screen-7__wrapper'>
+                          <div className='content-wrapper__content__screen-7__wrapper__header'>
+                              <div className='content-wrapper__content__screen-3__line'></div>
+                              <h2 className='content-wrapper__content__screen-3__header-text'>Контакты</h2>
+                              <p className='content-wrapper__content__screen-3__space'></p>
+                          </div>
+                          <div className='content-wrapper__content__screen-7__wrapper__container'>
+                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                      <img src={require('./images/pin-icon.png')} alt='' width='27px' height=''/>
+                                  </div>
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Адрес:</p>
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">27083, г. Москва, ул. Юннатов, д. 18</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className='content-wrapper__content__screen-7__wrapper__container'>
+                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                      <img src={require('./images/phone-icon.png')} alt='' width='27px' height=''/>
+                                  </div>
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Телефон:</p>
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">+7 495 787-29-92</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className='content-wrapper__content__screen-7__wrapper__container'>
+                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                      <img src={require('./images/mail-icon.png')} alt='' width='27px' height=''/>
+                                  </div>
+                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Email: </p>
+                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">sap@norbit.ru</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
               </div>
           </div>
-          <PopUp/>
+          {/* <PopUp/> */}
       </div>
     )}
 }
