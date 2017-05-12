@@ -1,8 +1,14 @@
 import React from 'react';
+import PopUp from './PopUp.jsx';
+
 import '../styles/index.scss';
 
 export default class Content extends React.Component {
-  render() {
+    showPopUp() {
+        document.getElementById('popUp').className = 'visible';
+        document.body.style.overflow = "hidden";
+    }
+    render() {
     return (
       <div>
           <div className='content-wrapper'>
@@ -10,7 +16,7 @@ export default class Content extends React.Component {
                   <section className='content-wrapper__content__screen-1'>
                       <div className='content-wrapper__content__screen-1__block-1'>
                           <img className='content-wrapper__content__screen-1__sap-hybris-logo' src={require('./images/sap-hybris.png')} alt='' height='34px'/>
-                          <p className='content-wrapper__content__screen-1__sap-hybris-text'>SAP Hybris —эффективное управление всем циклом взаимодействия с клиентом</p>
+                          <h1 className='content-wrapper__content__screen-1__sap-hybris-text'>SAP Hybris —эффективное управление всем циклом взаимодействия с клиентом</h1>
                       </div>
                       <div className='content-wrapper__content__screen-1__block-2'>
                           <div className='content-wrapper__content__screen-1__block-2__list'>
@@ -222,12 +228,24 @@ export default class Content extends React.Component {
                           </div>
                       </div>
                       <div className='content-wrapper__content__screen-5__scheme-block'>
-                          <img className='content-wrapper__content__screen-5__scheme-block__img-small' src={require('./images/scheme-small.png')} alt='' height='' width='100%'/>
+                          <img className='content-wrapper__content__screen-5__scheme-block__img-small' src={require('./images/scheme-small.png')} alt='' height='' width='100%' onClick={this.showPopUp}/>
+                      </div>
+                  </section>
+                  <section className='content-wrapper__content__screen-2'>
+                      <div className='content-wrapper__content__screen-2__form'>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
+                              <input className='input input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
+                          </div>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
+                              <button className='button button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                          </div>
                       </div>
                   </section>
               </div>
           </div>
+          <PopUp/>
       </div>
-    )
-  }
+    )}
 }

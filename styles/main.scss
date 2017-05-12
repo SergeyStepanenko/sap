@@ -3,7 +3,7 @@ $default_regular:  "Open Sans Regular";
 
 body {
   background: #fff;
-  overflow-x:  hidden;
+  // overflow-x: hidden;
 }
 
 .header {
@@ -115,7 +115,7 @@ body {
             }
         }
         &__list {
-            margin-left: 40px;
+            margin-left: 38px;
             margin-right: 20px;
             li {
                 list-style: disc;
@@ -130,7 +130,7 @@ body {
         }
         &__block-1 {
             max-width: 580px;
-            min-width: 320px;
+            // min-width: 320px;
             margin: 0 7px;
         }
     }
@@ -223,4 +223,10 @@ body {
         background-color: rgb(2, 151, 206);
         transition: all .12s ease-in-out;
     }
+}
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
 }
