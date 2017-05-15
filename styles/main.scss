@@ -65,10 +65,18 @@ body {
     }
     &__screen-2 {
         background-color: #363636;
+        &__header {
+          font: 20px $default_light;
+          text-align: center;
+          padding: 45px 0 5px 0;
+        }
         &__form {
             &__pair {
             }
         }
+    }
+    &__screen-2-white {
+      background-color: #f2f6f7;
     }
     &__screen-3 {
         &__space {
@@ -90,14 +98,14 @@ body {
         }
         &__header-text {
             font-size: 24px;
-            // width: 310px;
             position: absolute;
             left: 50%;
             font-family: $default_light;
             text-align: center;
             margin: 25px 0 25px -155px;
-            background-color: #fff;
             z-index: 100;
+            color: #000;
+            background-color: #fff;
         }
         &__commerce-block {
             margin: 0 20px 25px 20px;
@@ -173,6 +181,21 @@ body {
         background-size: cover;
         background-position: top;
         padding-bottom: 50px;
+        &__header {
+            &__wrapper {
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                padding: 45px 0 55px 0;
+            }
+            &__text {
+                font: 24px $default_light;
+                text-align: center;
+                color: #fff;
+                width: 300px;
+            }
+            &__line {}
+        }
         &__wrapper {
             &__container {
                 width: 300px;
@@ -228,6 +251,17 @@ body {
 
                 }
             }
+        }
+    }
+    &__footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 65px;
+        background-color: #363636;
+        &__block {
+            font: 14px $default_light;
         }
     }
     &__colored-list {

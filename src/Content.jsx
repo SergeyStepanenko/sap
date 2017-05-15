@@ -246,9 +246,11 @@ export default class Content extends React.Component {
 
                   <section className='content-wrapper__content__screen-6'>
                       <div className='content-wrapper__content__screen-6__header'>
-                          <div className='content-wrapper__content__screen-3__line-white'></div>
-                          <p className='content-wrapper__content__screen-3__header-text'>Почему Норбит</p>
-                          <p className='content-wrapper__content__screen-3__space'></p>
+                          <div className='content-wrapper__content__screen-6__header__wrapper'>
+                              <div className='content-wrapper__content__screen-6__header__line'></div>
+                              <div className='content-wrapper__content__screen-6__header__text'>Почему Норбит</div>
+                              <div className='content-wrapper__content__screen-6__header__line'></div>
+                          </div>
                       </div>
                       <div className='content-wrapper__content__screen-6__wrapper'>
                           <div className='content-wrapper__content__screen-6__wrapper__container'>
@@ -329,6 +331,29 @@ export default class Content extends React.Component {
                           </div>
                       </div>
                   </section>
+
+                  <section className='content-wrapper__content__screen-2-white'>
+                      <h2 className='content-wrapper__content__screen-2__header'>Попробуйте SAP Hybris прямо сейчас!</h2>
+                      <div className='content-wrapper__content__screen-2__form'>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
+                              <input className='input input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
+                          </div>
+                          <div className='content-wrapper__content__screen-2__form__pair'>
+                              <input className='input input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
+                              <button className='button button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                          </div>
+                      </div>
+                  </section>
+
+                  <section className='content-wrapper__content__screen-7'>
+                    <iframe src="https://api-maps.yandex.ru/frame/v1/-/C6uq5J4L" width="100%" height="400px"></iframe>
+                  </section>
+
+                  <section className='content-wrapper__content__footer'>
+                      <span className='content-wrapper__content__footer__block'>© 2017 Норбит. Все права защищены</span>
+                  </section>
+
               </div>
           </div>
           {/* <PopUp/> */}
