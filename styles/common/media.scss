@@ -121,7 +121,9 @@
                     padding-top: 60px;
                 }
             }
-
+            &__screen3and7wrapper {
+                margin-top: -50px;
+            }
 	}
     .header-fix {
         width: 280px;
@@ -197,9 +199,6 @@
         margin-bottom: 23px;
         width: 255px;
     }
-    .button {
-        width: 255px;
-    }
 }
 /* medium ----------- */
 @media only screen
@@ -255,6 +254,34 @@ and (min-width : 768px) and (max-width : 1365px) {
                             height: 63px;
                         }
                     }
+                }
+            }
+            &__screen-2 {
+                &-white {
+                    height: 300px;
+                    margin: 40px 10px;
+                }
+                &__header-white {
+                    font: 20px "Open Sans Light";
+                    text-align: center;
+                    padding: 40px 0 30px 0;
+                    margin: 0 auto;
+                }
+                &__form-white__pair-white {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 586px;
+                    margin: 0 auto;
+                    &__subpair {
+                        width: 285px;
+                        height: 62px;
+                    }
+                }
+                &__form-white__submit-white {
+                    width: 586px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: flex-end;
                 }
             }
             &__screen-3 {
@@ -331,6 +358,9 @@ and (min-width : 768px) and (max-width : 1365px) {
                     margin-top: 100px;
                 }
             }
+            &__screen3and7wrapper {
+                margin-top: 50px;
+            }
 		}
 	}
     .margin-top50px {
@@ -365,6 +395,24 @@ and (min-width : 768px) and (max-width : 1365px) {
         visibility: hidden;
     }
     .input {
+        width: 255px;
+    }
+    .input-white {
+        width: 285px;
+    }
+    .button-white {
+        width: 285px;
+    }
+    .error-white {
+        position: relative;
+        left: 20px;
+        top: -2px;
+        width: 255px;
+    }
+    .error-mail-white {
+        position: relative;
+        left: -150px;
+        top: -2px;
         width: 255px;
     }
 }
@@ -451,6 +499,12 @@ and (min-width : 768px) {
                     }
                 }
             }
+            &__screen-3 {
+                &__header-text {
+                    width: 500px;
+                    margin-left: -250px;
+                }
+            }
         }
     }
 }
@@ -501,6 +555,33 @@ and (min-width : 768px) {
                 }
             }
         }
+        &__screen-2 {
+            &-white {
+                height: 300px;
+            }
+            &__header-white {
+                font: 20px "Open Sans Light";
+                text-align: center;
+                padding: 40px 0 30px 0;
+                margin: 0 auto;
+            }
+            &__form-white__pair-white {
+                display: flex;
+                justify-content: space-between;
+                width: 586px;
+                margin: 0 auto;
+                &__subpair {
+                    width: 285px;
+                    height: 62px;
+                }
+            }
+            &__form-white__submit-white {
+                width: 586px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
         &__screen-3 {
             display: flex;
             width: 1170px;
@@ -524,6 +605,11 @@ and (min-width : 768px) {
                 display: flex;
                 width: 570px;
             }
+            &__commerce-block {
+                &__description__text {
+                    width: 360px;
+                }
+            }
             &__list li {
                 margin-top: 2px;
             }
@@ -533,10 +619,6 @@ and (min-width : 768px) {
             }
             &__block-1 {
                 margin-top: 80px;
-            }
-            &__header-text {
-                width: 400px;
-                margin-left: -200px;
             }
             &__commerce-block {
                 display: flex;
@@ -555,12 +637,50 @@ and (min-width : 768px) {
                 margin: 0 auto;
             }
         }
+        &__screen-5 {
+            &__blocks-wrapper {
+                display: flex;
+                justify-content: space-around;
+                width: 1170px;
+                margin: 0 auto;
+            }
+            &__block__text {
+                width: 150px;
+            }
+            &__scheme-block {
+                width: 1170px;
+                margin: 0 auto;
+            }
+        }
         &__screen-6 {
             &__wrapper {
                 display: flex;
-                justify-content: center;
                 max-width: 1120px;
                 margin: 0 auto;
+            }
+            &__header {
+                width: 1170px;
+                margin: 0 auto;
+                &__line {
+                width: 40%;
+                margin: 0 30px 13px 30px;
+                border-bottom: 1px solid #fff;
+                }
+            }
+        }
+        &__screen3and7wrapper {
+            display: flex;
+            width: 1160px;
+            height: 340px;
+            margin: 0 auto;
+            padding-top: 40px;
+            &__pair-1 {
+                width: 315px;
+                margin: 59px 143px 0 -20px;
+            }
+            &__pair-2 {
+                width: 743px;
+                height: 304px;
             }
         }
 	}
@@ -603,5 +723,44 @@ and (min-width : 768px) {
     }
     .fix {
         padding-top: 0px;
+    }
+    .space_1 {
+        margin-top: 37px;
+    }
+    .space_2 {
+        margin-top: 25px;
+    }
+    .fix-2 {
+        margin-top: -46px;
+    }
+    .orange {
+        margin-top: 15px;
+    }
+    .fix-3 {
+        height: 276px;
+    }
+    .fix-4 {
+        height: 247px;
+    }
+    .fix-5 {
+        height: 25px;
+    }
+    .input-white {
+        width: 285px;
+    }
+    .button-white {
+        width: 285px;
+    }
+    .error-white {
+        position: relative;
+        left: 20px;
+        top: -2px;
+        width: 255px;
+    }
+    .error-mail-white {
+        position: relative;
+        left: -150px;
+        top: -2px;
+        width: 255px;
     }
 }

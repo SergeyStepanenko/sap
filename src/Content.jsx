@@ -174,16 +174,17 @@ export default class Content extends React.Component {
                               <div className='content-wrapper__content__screen-4__wrapper'>
                                   <div className='content-wrapper__content__screen-3__commerce-block'>
                                       <div className='content-wrapper__content__screen-3__commerce-block__pair'>
-                                          <div className='content-wrapper__content__screen-3__commerce-block-pair'>
+                                          <div className='content-wrapper__content__screen-3__commerce-block-pair fix-3'>
                                               <img className='content-wrapper__content__screen-3__commerce-block__commerce-icon2' src={require('./images/sap-cloud.png')} alt='' height='106px' width=''/>
                                               <div className='content-wrapper__content__screen-3__commerce-block__description'>
                                                   <p className='content-wrapper__content__screen-3__commerce-block__description__header'>SAP Cloud For Customer</p>
                                                   <p className='content-wrapper__content__screen-3__commerce-block__description__text'>Комплексное решение для продаж, обслуживания клиентов и маркетинга – в одной системе объединены возможности управления, выполнения и аналитики бизнес-процессов. Вы сможете отслеживать все стадии совершения сделки, получать больше данных о клиентах, анализировать результаты и опыт сотрудников и принимать решения, опираясь на успешные практики.</p>
                                               </div>
                                           </div>
-
+                                          <p className='space_1'></p>
                                           <p className='content-wrapper__content__screen-3__commerce-block__description__header margin-top50px'>SAP Hybris Sales</p>
                                           <p className='content-wrapper__content__screen-3__commerce-block__description__text-sub'>Позволяет контролировать и анализировать процесс продаж, структурировать информацию обо всех стадиях совершения сделок и принимать в будущем успешные управленческие решения.</p>
+                                          <p className='fix-2'></p>
                                           <div className='content-wrapper__content__colored-list orange adjust-list'>
                                               <ul>
                                                   <li><span>Управление базой клиентов</span></li>
@@ -196,7 +197,7 @@ export default class Content extends React.Component {
                                       </div>
                                       <div className='content-wrapper__content__screen-3__commerce-block__pair-2'>
                                           <p className='content-wrapper__content__screen-3__commerce-block__description__header margin-top50px'>Маркетинг:</p>
-                                          <div className='content-wrapper__content__colored-list orange adjust-list fix'>
+                                          <div className='content-wrapper__content__colored-list orange adjust-list fix  fix-4'>
                                               <ul>
                                                   <li><span>Анализ аудитории</span></li>
                                                   <li><span>Сегментация</span></li>
@@ -208,6 +209,7 @@ export default class Content extends React.Component {
                                                   <li><span>Оценка эффективности маркетинговых кампаний</span></li>
                                               </ul>
                                           </div>
+                                          <p className='space_2'></p>
                                           <p className='content-wrapper__content__screen-3__commerce-block__description__header margin-top50px'>Сервис:</p>
                                           <div className='content-wrapper__content__colored-list orange adjust-list fix'>
                                               <ul>
@@ -230,7 +232,7 @@ export default class Content extends React.Component {
                   <section className='content-wrapper__content__screen-5'>
                       <div className='content-wrapper__content__screen-5__wrapper'>
                           <div className='content-wrapper__content__screen-3__line'></div>
-                          <p className='content-wrapper__content__screen-3__header-text header-fix'>Выгоды от внедрения SAP Hybris</p>
+                          <h2 className='content-wrapper__content__screen-3__header-text header-fix'>Выгоды от внедрения SAP Hybris</h2>
                           <p className='content-wrapper__content__screen-3__space'></p>
                       </div>
                       <div className='content-wrapper__content__screen-5__blocks-wrapper'>
@@ -280,7 +282,7 @@ export default class Content extends React.Component {
                       <div className='content-wrapper__content__screen-6__header'>
                           <div className='content-wrapper__content__screen-6__header__wrapper'>
                               <div className='content-wrapper__content__screen-6__header__line'></div>
-                              <div className='content-wrapper__content__screen-6__header__text'>Почему Норбит</div>
+                              <div className='content-wrapper__content__screen-6__header__text'>Почему НОРБИТ</div>
                               <div className='content-wrapper__content__screen-6__header__line'></div>
                           </div>
                       </div>
@@ -321,70 +323,85 @@ export default class Content extends React.Component {
                       </div>
                   </section>
 
-                  <h2 className='content-wrapper__content__screen-3__header-text content-wrapper__content__screen-3__header-text-contacts'>Контакты</h2>
-                  <section className='content-wrapper__content__screen-7'>
-                      <div className='content-wrapper__content__screen-7__wrapper__header'>
-                          <div className='content-wrapper__content__screen-3__line'></div>
-                          <div className='content-wrapper__content__screen-7__space'></div>
-                      </div>
-                      <div className='content-wrapper__content__screen-7__wrapper'>
-                          <div className='content-wrapper__content__screen-7__wrapper__container'>
-                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
-                                      <img src={require('./images/pin-icon.png')} alt='' width='27px' height=''/>
-                                  </div>
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Адрес:</p>
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">27083, г. Москва, ул. Юннатов, д. 18</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className='content-wrapper__content__screen-7__wrapper__container'>
-                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
-                                      <img src={require('./images/phone-icon.png')} alt='' width='27px' height=''/>
-                                  </div>
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Телефон:</p>
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">+7 495 787-29-92</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className='content-wrapper__content__screen-7__wrapper__container'>
-                              <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
-                                      <img src={require('./images/mail-icon.png')} alt='' width='27px' height=''/>
-                                  </div>
-                                  <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Email: </p>
-                                      <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">sap@norbit.ru</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </section>
+                  <p className='fix-5'></p>
+                  <div className='content-wrapper__content__screen-3__line'></div>
+                  <h2 className='content-wrapper__content__screen-3__header-text header-fix'>Контакты</h2>
+                  <p className='content-wrapper__content__screen-3__space'></p>
 
-                  <section className='content-wrapper__content__screen-2-white'>
-                      <h2 className='content-wrapper__content__screen-2__header-white'>Попробуйте SAP Hybris прямо сейчас!</h2>
-                      <div className='content-wrapper__content__screen-2__form-white'>
-                          <div className=' content-wrapper__content__screen-2__form-white__pair-white'>
-                              <input className='input input-white input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
-                              <span className='error'>Пожалуйста заполните это поле</span>
-                              <input className='input input-white input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
-                              <span className='error'>Пожалуйста заполните это поле</span>
-                              <span className='error-mail'>Введите верный email</span>
-                          </div>
-                          <div className='content-wrapper__content__screen-2__form-white__pair-white'>
-                              <input className='input input-white input-company' id='input-company' name='phone' placeholder='Название компании'></input>
-                              <span className='error'>Пожалуйста заполните это поле</span>
-                              <input className='input input-white input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
-                              <span className='error'>Пожалуйста заполните это поле</span>
-                          </div>
+                  <div className='content-wrapper__content__screen3and7wrapper'>
+                      <div className='content-wrapper__content__screen3and7wrapper__pair-1'>
+                          <section className='content-wrapper__content__screen-7'>
+                              <div className='content-wrapper__content__screen-7__wrapper'>
+                                  <div className='content-wrapper__content__screen-7__wrapper__container'>
+                                      <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                              <img src={require('./images/pin-icon.png')} alt='' width='27px' height=''/>
+                                          </div>
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Адрес:</p>
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">27083, г. Москва, ул. Юннатов, д. 18</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div className='content-wrapper__content__screen-7__wrapper__container'>
+                                      <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                              <img src={require('./images/phone-icon.png')} alt='' width='27px' height=''/>
+                                          </div>
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Телефон:</p>
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">+7 495 787-29-92</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div className='content-wrapper__content__screen-7__wrapper__container'>
+                                      <div className="content-wrapper__content__screen-7__wrapper__container__wrapper">
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-1">
+                                              <img src={require('./images/mail-icon.png')} alt='' width='27px' height=''/>
+                                          </div>
+                                          <div className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2">
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_1">Email: </p>
+                                              <p className="content-wrapper__content__screen-7__wrapper__container__wrapper__block-2_2">sap@norbit.ru</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </section>
                       </div>
-                      <div className='content-wrapper__content__screen-2__form-white__submit-white'>
-                          <button className='input button button-white button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+
+
+                      <div className='content-wrapper__content__screen3and7wrapper__pair-2'>
+                          <section className='content-wrapper__content__screen-2-white'>
+                              <h2 className='content-wrapper__content__screen-2__header-white'>Попробуйте SAP Hybris прямо сейчас!</h2>
+                              <div className='content-wrapper__content__screen-2__form-white'>
+                                  <div className=' content-wrapper__content__screen-2__form-white__pair-white'>
+                                      <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
+                                          <input className='input input-white input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
+                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                      </div>
+                                      <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
+                                          <input className='input input-white input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
+                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                          <span className='error-mail-white visible'>Введите верный email</span>
+                                      </div>
+                                  </div>
+                                  <div className='content-wrapper__content__screen-2__form-white__pair-white'>
+                                      <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
+                                          <input className='input input-white input-company' id='input-company' name='phone' placeholder='Название компании'></input>
+                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                      </div>
+                                      <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
+                                          <input className='input input-white input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
+                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div className='content-wrapper__content__screen-2__form-white__submit-white'>
+                                  <button className='input button button-white button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                              </div>
+                          </section>
                       </div>
-                  </section>
+                  </div>
 
                   <section className='content-wrapper__content__screen-7'>
                     <iframe src="https://api-maps.yandex.ru/frame/v1/-/C6uq5J4L" width="100%" height="400px"></iframe>
