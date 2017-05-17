@@ -1,6 +1,7 @@
 import React from 'react';
 // import PopUp from './PopUp.jsx';
 
+// import '../src/mail/index.php';
 import '../styles/index.scss';
 
 export default class Content extends React.Component {
@@ -94,30 +95,30 @@ export default class Content extends React.Component {
             return false;
         }
         console.log(true);
-        
-        $("#myForm").submit(function(){
-          var error = "";
 
-          error += $(this).yaproField("phone", "p", "телефон введен неправильно");
-
-          var data = $("#myForm").serialize();
-
-          $.ajax({
-            type: "POST",
-            url: 'mail/index.php',
-            data: data,
-            success: function() {
-              // показать окно об успешной отправке и закрыть после
-              body.appendChild(popUpCover);
-              closeButton2 = document.querySelector('.closeButton2');
-              setTimeout(function addEventListener () {closeButton2.addEventListener('click', closePopUp, false)}, 1);
-            },
-          });
-
-          return false;
-        });
-
-        fieldPhone("[name=phone]"); //форматирование номера
+        // $("#myForm").submit(function(){
+        //   var error = "";
+        //
+        //   error += $(this).yaproField("phone", "p", "телефон введен неправильно");
+        //
+        //   var data = $("#myForm").serialize();
+        //
+        //   $.ajax({
+        //     type: "POST",
+        //     url: 'mail/index.php',
+        //     data: data,
+        //     success: function() {
+        //       // показать окно об успешной отправке и закрыть после
+        //       body.appendChild(popUpCover);
+        //       closeButton2 = document.querySelector('.closeButton2');
+        //       setTimeout(function addEventListener () {closeButton2.addEventListener('click', closePopUp, false)}, 1);
+        //     },
+        //   });
+        //
+        //   return false;
+        // });
+        //
+        // fieldPhone("[name=phone]"); //форматирование номера
 
         return true;
     }
