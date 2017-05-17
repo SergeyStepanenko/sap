@@ -47,6 +47,7 @@
 		&__content {
 			&__screen-1 {
 				padding: 0 20px;
+                padding-bottom: 15px;
 				&__sap-hybris {
 					&-logo {
 						margin: 12px 0 30px 0;
@@ -82,7 +83,9 @@
         			}
         		}
                 &__header-white {
-                    font: 20px "Open Sans Light";
+                    font-family: $default;
+                    font-weight: 300;
+                    font-size: 20px;
                     text-align: center;
                     padding: 45px 0 20px 0;
                     width: 285px;
@@ -251,6 +254,21 @@
     .input-black {
         position: absolute;
     }
+    .input-check {
+        &__checked-icon {
+            &-white {
+                top: -27px;
+                left: 258px;
+            }
+        }
+        &__exclamation-icon {
+            &-white {
+                top: -28px;
+                left: 250px;
+            }
+        }
+    }
+
 }
 /* medium ----------- */
 @media only screen
@@ -275,7 +293,7 @@ and (min-width : 768px) and (max-width : 1365px) {
                     margin: 0 auto;
                     text-align: center;
                     font-size: 34px;
-                    font-family: "Open Sans";
+                    font-family: $default;
                     color: rgb(255, 255, 255);
                     line-height: 1.2;
                 }
@@ -314,7 +332,9 @@ and (min-width : 768px) and (max-width : 1365px) {
                     margin: 40px 10px;
                 }
                 &__header-white {
-                    font: 20px "Open Sans Light";
+                    font-family: $default;
+                    font-weight: 300;
+                    font-size: 20px;
                     text-align: center;
                     padding: 40px 0 30px 0;
                     margin: 0 auto;
@@ -471,10 +491,18 @@ and (min-width : 768px) and (max-width : 1365px) {
         &__checked-icon {
             top: 1px;
             left: -28px;
+            &-white {
+                top: -27px;
+                left: 258px;
+            }
         }
         &__exclamation-icon {
             top: 0px;
             left: -35px;
+            &-white {
+                top: -28px;
+                left: 250px;
+            }
         }
     }
 }
@@ -522,6 +550,7 @@ and (min-width : 768px) {
             }
             &__screen-1 {
                 padding: 0 20px;
+                padding-bottom: 15px;
                 &__sap-hybris-logo {
                     margin: 12px 0 30px 0;
                 }
@@ -530,7 +559,7 @@ and (min-width : 768px) {
                     margin: 0 auto;
                     text-align: center;
                     font-size: 34px;
-                    font-family: "Open Sans";
+                    font-family: $default;
                     color: rgb(255, 255, 255);
                     line-height: 1.2;
                 }
@@ -625,7 +654,9 @@ and (min-width : 768px) {
                 height: 300px;
             }
             &__header-white {
-                font: 20px "Open Sans Light";
+                font-family: $default;
+                font-weight: 300;
+                font-size: 20px;
                 text-align: center;
                 padding: 40px 0 30px 0;
                 margin: 0 auto;
@@ -818,7 +849,7 @@ and (min-width : 768px) {
     }
     .error-white {
         position: relative;
-        left: 20px;
+        left: 3px;
         top: -2px;
         width: 255px;
     }
@@ -832,10 +863,18 @@ and (min-width : 768px) {
         &__checked-icon {
             top: -28px;
             left: 223px;
+            &-white {
+                top: -27px;
+                left: 258px;
+            }
         }
         &__exclamation-icon {
             top: -28px;
             left: 215px;
+            &-white {
+                top: -28px;
+                left: 250px;
+            }
         }
     }
 }

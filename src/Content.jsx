@@ -94,6 +94,30 @@ export default class Content extends React.Component {
             return false;
         }
         console.log(true);
+        
+        $("#myForm").submit(function(){
+          var error = "";
+
+          error += $(this).yaproField("phone", "p", "телефон введен неправильно");
+
+          var data = $("#myForm").serialize();
+
+          $.ajax({
+            type: "POST",
+            url: 'mail/index.php',
+            data: data,
+            success: function() {
+              // показать окно об успешной отправке и закрыть после
+              body.appendChild(popUpCover);
+              closeButton2 = document.querySelector('.closeButton2');
+              setTimeout(function addEventListener () {closeButton2.addEventListener('click', closePopUp, false)}, 1);
+            },
+          });
+
+          return false;
+        });
+
+        fieldPhone("[name=phone]"); //форматирование номера
 
         return true;
     }
@@ -157,34 +181,34 @@ export default class Content extends React.Component {
                   </section>
 
                   <section className='content-wrapper__content__screen-2'>
-                      <div className='content-wrapper__content__screen-2__form'>
-                          <div className='content-wrapper__content__screen-2__form__pair'>
-                              <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-name input-check' id='input-name-1' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
-                                  <img id='input-name-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
-                                  <img id='input-name-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                  <span id='error-name-1' className='error-black'>Пожалуйста заполните это поле</span>
+                      <form className='content-wrapper__content__screen-2__form' action='../src/mail/index.php' id='myForm1' method='post'>
+                              <div className='content-wrapper__content__screen-2__form__pair'>
+                                  <div className='content-wrapper__content__screen-2__form__pair__subpair'>
+                                      <input className='input input-black input-name input-check' id='input-name-1' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
+                                      <img id='input-name-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                      <img id='input-name-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                      <span id='error-name-1' className='error-black'>Пожалуйста заполните это поле</span>
+                                  </div>
+                                  <div className='content-wrapper__content__screen-2__form__pair__subpair'>
+                                      <input className='input input-black input-email input-check' id='input-email-1' type='email' name='email' placeholder='Введите ваш email' onChange={this.formValidation}></input>
+                                      <img id='input-email-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                      <img id='input-email-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                      <span id='error-email-1' className='error-black'>Введите верный email</span>
+                                      {/* <span className='error-mail-black visible'>Введите верный email</span> */}
+                                  </div>
                               </div>
-                              <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-email input-check' id='input-email-1' type='email' name='email' placeholder='Введите ваш email' onChange={this.formValidation}></input>
-                                  <img id='input-email-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
-                                  <img id='input-email-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                  <span id='error-email-1' className='error-black'>Введите верный email</span>
-                                  {/* <span className='error-mail-black visible'>Введите верный email</span> */}
+                              <div className='content-wrapper__content__screen-2__form__pair'>
+                                  <div className='content-wrapper__content__screen-2__form__pair__subpair'>
+                                      <input className='input input-black input-phone input-check' id='input-phone-1' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
+                                      <img id='input-phone-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                      <img id='input-phone-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                      <span id='error-phone-1' className='error-black'>Пожалуйста заполните это поле</span>
+                                  </div>
+                                  <div className='content-wrapper__content__screen-2__form__pair__subpair'>
+                                      <button className='button input-black input button-submit' id='button-submit-1' type='submit' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  </div>
                               </div>
-                          </div>
-                          <div className='content-wrapper__content__screen-2__form__pair'>
-                              <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-phone input-check' id='input-phone-1' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
-                                  <img id='input-phone-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
-                                  <img id='input-phone-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                  <span id='error-phone-1' className='error-black'>Пожалуйста заполните это поле</span>
-                              </div>
-                              <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <button className='button input-black input button-submit' id='button-submit-1' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
-                              </div>
-                          </div>
-                      </div>
+                      </form>
                   </section>
 
                   <div className='content-wrapper__content__screen-3__header'>
@@ -353,22 +377,28 @@ export default class Content extends React.Component {
                       <div className='content-wrapper__content__screen-2__form'>
                           <div className='content-wrapper__content__screen-2__form__pair'>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
+                                  <input className='input input-black input-name input-check' id='input-name-2' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
+                                  <img id='input-name-checked-icon-2' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-name-exclamation-icon-2' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-name-2' className='error-black'>Пожалуйста заполните это поле</span>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
-                                  <span className='error-mail-black visible'>Введите верный email</span>
+                                  <input className='input input-black input-email input-check' id='input-email-2' type='email' name='email' placeholder='Введите ваш email' onChange={this.formValidation}></input>
+                                  <img id='input-email-checked-icon-2' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-email-exclamation-icon-2' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-email-2' className='error-black'>Введите верный email</span>
+                                  {/* <span className='error-mail-black visible'>Введите верный email</span> */}
                               </div>
                           </div>
                           <div className='content-wrapper__content__screen-2__form__pair'>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
+                                  <input className='input input-black input-phone input-check' id='input-phone-2' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
+                                  <img id='input-phone-checked-icon-2' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-phone-exclamation-icon-2' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-phone-2' className='error-black'>Пожалуйста заполните это поле</span>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <button className='button input-black input button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  <button className='button input-black input button-submit' id='button-submit-2' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                               </div>
                           </div>
                       </div>
@@ -472,28 +502,35 @@ export default class Content extends React.Component {
                               <div className='content-wrapper__content__screen-2__form-white'>
                                   <div className=' content-wrapper__content__screen-2__form-white__pair-white'>
                                       <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
-                                          <input className='input input-white input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
-                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                          <input className='input input-white input-name input-check' id='input-name-3' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
+                                          <img id='input-name-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                          <img id='input-name-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                          <span id='error-name-3' className='error-white'>Пожалуйста заполните это поле</span>
                                       </div>
                                       <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
-                                          <input className='input input-white input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
-                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
-                                          <span className='error-mail-white visible'>Введите верный email</span>
+                                          <input className='input input-white input-email input-check' id='input-email-3' type='email' name='email' placeholder='Введите ваш email' onChange={this.formValidation}></input>
+                                          <img id='input-email-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                          <img id='input-email-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                          <span id='error-email-3' className='error-white'>Введите верный email</span>
                                       </div>
                                   </div>
                                   <div className='content-wrapper__content__screen-2__form-white__pair-white'>
                                       <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
-                                          <input className='input input-white input-company' id='input-company' name='phone' placeholder='Название компании'></input>
-                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                          <input className='input input-white input-phone input-check' id='input-phone-3' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
+                                          <img id='input-phone-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                          <img id='input-phone-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                          <span id='error-phone-3' className='error-white'>Пожалуйста заполните это поле</span>
                                       </div>
                                       <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
-                                          <input className='input input-white input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
-                                          <span className='error-white visible'>Пожалуйста заполните это поле</span>
+                                          <input className='input input-white input-phone input-check' id='input-phone-3' name='phone' placeholder='Название компании'></input>
+                                          <img id='input-phone-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                          <img id='input-phone-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                          <span id='error-phone-3' className='error-white'>Пожалуйста заполните это поле</span>
                                       </div>
                                   </div>
                               </div>
                               <div className='content-wrapper__content__screen-2__form-white__submit-white'>
-                                  <button className='input button button-white button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  <button className='button input-white input button-submit' id='button-submit-3' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                               </div>
                           </section>
                       </div>

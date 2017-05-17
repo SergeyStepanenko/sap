@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Favicon from 'react-favicon';
+<Favicon url='../src/images/norbit.ico'/>
 import '../styles/index.scss';
 import '../styles/common/style_reset.css';
 import '../styles/fonts.scss';
@@ -13,6 +14,7 @@ export default class Header extends React.Component {
     render() {
     return (
       <div>
+
           <div className='header'>
               <div className='header__wrapper'>
                   <div className='header__container'>
