@@ -6,6 +6,7 @@
 	.header {
 		&__container {
 			height: 55px;
+            background-color: #fff;
 			&__norbit-logo,
 			&__sap-logo {
 			}
@@ -17,7 +18,28 @@
             &__wrapper__contacts {
                 display: none;
             }
+            &__contact {
+                width: 175px;
+                text-align: left;
+                margin: 0 auto;
+            }
 		}
+        &__menu {
+            position: fixed;
+            top: -40px;
+            background-color: #fff;
+            height: 95px;
+            width: 100%;
+            &__wrapper {
+                border-top: 1px solid #e6e6e6;
+                &__inner {
+                    display: flex;
+                    align-items: center;
+                    height: 47px;
+                    border-top: 1px solid #e6e6e6;
+                }
+            }
+        }
 	}
 
 	.content-wrapper {
@@ -79,6 +101,9 @@
                 }
             }
             &__screen-3 {
+                &__list li {
+                    margin-top: 14px;
+                }
                 &__commerce-block {
                     &__commerce-icon2 {
                         display: flex;
@@ -175,9 +200,17 @@
     }
     .error-black {
         position: relative;
-        left: 21px;
-        top: -21px;
+        left: 4px;
+        top: 38px;
         width: 255px;
+    }
+    .error-white {
+        left: 21px;
+        top: -2px;
+    }
+    .error-mail-white {
+        left: -157px;
+        top: -2px;
     }
     .error-mail {
         height: 0px;
@@ -198,6 +231,25 @@
     .input-black {
         margin-bottom: 23px;
         width: 255px;
+    }
+    .button-fix {
+        padding-right: 3px;
+    }
+    #menu {
+        transition: .4s all ease-in-out;
+        z-index: -10;
+    }
+    .menu-open {
+        transform: translateY(94px);
+    }
+    .display-none {
+        display: none;
+    }
+    .fix-1 {
+        padding-top: 0;
+    }
+    .input-black {
+        position: absolute;
     }
 }
 /* medium ----------- */
@@ -415,6 +467,16 @@ and (min-width : 768px) and (max-width : 1365px) {
         top: -2px;
         width: 255px;
     }
+    .input-check {
+        &__checked-icon {
+            top: 1px;
+            left: -28px;
+        }
+        &__exclamation-icon {
+            top: 0px;
+            left: -35px;
+        }
+    }
 }
 
 // Общие стили для 768 и 1920px
@@ -426,6 +488,9 @@ and (min-width : 768px) {
             justify-content: space-between;
             max-width: 1160px;
             margin: 0 auto;
+        }
+        &__menu {
+            display: none;
         }
         &__container {
             height: 65px;
@@ -762,5 +827,15 @@ and (min-width : 768px) {
         left: -150px;
         top: -2px;
         width: 255px;
+    }
+    .input-check {
+        &__checked-icon {
+            top: -28px;
+            left: 223px;
+        }
+        &__exclamation-icon {
+            top: -28px;
+            left: 215px;
+        }
     }
 }

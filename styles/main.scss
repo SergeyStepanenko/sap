@@ -24,6 +24,7 @@ body {
             color: #000;
             padding: 0 6px;
             font: 16px $default_regular;
+            vertical-align: text-bottom;
         }
     }
 }
@@ -322,7 +323,32 @@ body {
     font-size: 16px;
     font-family: $default_light;
 }
-
+.input-error {
+    border: 3px solid #dd5454;
+    padding: 0 17px;
+}
+.input-check:focus {
+    border: 3px solid #a1def4;
+    padding: 0 17px;
+}
+.input-check-error {
+    border: 3px solid #e47777;
+    padding: 0 17px;
+}
+.input-check {
+    &__checked-icon {
+        position: relative;
+        top: 11px;
+        left: 227px;
+        visibility: hidden;
+    }
+    &__exclamation-icon {
+        position: relative;
+        top: 11px;
+        left: 218px;
+        visibility: hidden;
+    }
+}
 .button {
     justify-content: center;
     height: 40px;
@@ -330,8 +356,8 @@ body {
     border: 0px;
     font-size: 16px;
     font-family: $default_light;
-    background-color: rgb(2, 175, 239); // синий
-    // background-color: rgb(204, 204, 204);
+    font-weight: bolder;
+    background-color: rgb(2, 175, 239);
     transition: all .18s ease-in-out;
     color: #fff;
     &:hover {
@@ -344,6 +370,10 @@ body {
 }
 .hidden {
     display: none;
+}
+.disabled,
+.disabled:hover {
+    background-color: #cccccc;
 }
 .error,
 .error-black,

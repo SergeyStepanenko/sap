@@ -4,10 +4,100 @@ import React from 'react';
 import '../styles/index.scss';
 
 export default class Content extends React.Component {
-    // showPopUp() {
-    //     document.getElementById('popUp').className = 'visible';
-    //     document.body.style.overflow = "hidden";
-    // }
+    formValidation(e) {
+        const form = e.target.id.slice(-1);
+        const field = e.target.id.split('-')[1];
+        const value = e.target.value;
+        const successIcon = document.getElementById('input-' + field + '-checked-icon-' + form);
+        const errorIcon = document.getElementById('input-' + field + '-exclamation-icon-' + form);
+        const errorElement = document.getElementById('error-' + field + '-' + form);
+        const input = document.getElementById('input-' + field + '-' + form);
+
+        function showSuccessIcon() {
+            successIcon.classList.add('visible');
+            errorIcon.classList.remove('visible');
+            errorElement.classList.remove('visible');
+            input.classList.remove('input-error');
+        }
+
+        function showErrorIcon() {
+            successIcon.classList.remove('visible');
+            errorIcon.classList.add('visible');
+            errorElement.classList.add('visible');
+            input.classList.add('input-error');
+        }
+
+        function checkIfEmpty() {
+            if (value.length !== 0) {
+                return true;
+            }
+            return false;
+        }
+
+        function checkIfInputIsEmail() {
+            if (field === 'email') {
+                return true;
+            }
+        }
+
+        function validateEmail(mail) {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+                return true;
+            }
+            return false;
+        }
+
+
+        function fullCheck() {
+            if (checkIfInputIsEmail()) {
+                if (validateEmail(value)) {
+                    showSuccessIcon();
+                } else {
+                    showErrorIcon();
+                }
+            } else {
+                if (checkIfEmpty()) {
+                    showSuccessIcon();
+                } else {
+                    showErrorIcon();
+                }
+            }
+        }
+
+        fullCheck();
+
+        function checkSubmitButton() {
+            if ((document.getElementById('input-name-checked-icon-' + form).classList[1] !== 'visible')
+            || (document.getElementById('input-email-checked-icon-' + form).classList[1] !== 'visible')
+            || (document.getElementById('input-phone-checked-icon-' + form).classList[1] !== 'visible')) {
+                console.log(false);
+                document.getElementById('button-submit-' + form).classList.add('disabled');
+
+                return false;
+            }
+            document.getElementById('button-submit-' + form).classList.remove('disabled');
+
+            return true;
+        }
+
+        checkSubmitButton();
+    }
+
+    submit(e) {
+        const form = e.target.id.slice(-1);
+
+        if ((document.getElementById('input-name-checked-icon-' + form).classList[1] !== 'visible')
+        || (document.getElementById('input-email-checked-icon-' + form).classList[1] !== 'visible')
+        || (document.getElementById('input-phone-checked-icon-' + form).classList[1] !== 'visible')) {
+            console.log(false);
+
+            return false;
+        }
+        console.log(true);
+
+        return true;
+    }
+
     render() {
     return (
       <div>
@@ -70,22 +160,28 @@ export default class Content extends React.Component {
                       <div className='content-wrapper__content__screen-2__form'>
                           <div className='content-wrapper__content__screen-2__form__pair'>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-name' id='input-name' name='name' placeholder='Введите ваше имя'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
+                                  <input className='input input-black input-name input-check' id='input-name-1' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
+                                  <img id='input-name-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-name-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-name-1' className='error-black'>Пожалуйста заполните это поле</span>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-email' id='input-email' type='email' name='email' placeholder='Введите ваш email'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
-                                  <span className='error-mail-black visible'>Введите верный email</span>
+                                  <input className='input input-black input-email input-check' id='input-email-1' type='email' name='email' placeholder='Введите ваш email' onChange={this.formValidation}></input>
+                                  <img id='input-email-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-email-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-email-1' className='error-black'>Введите верный email</span>
+                                  {/* <span className='error-mail-black visible'>Введите верный email</span> */}
                               </div>
                           </div>
                           <div className='content-wrapper__content__screen-2__form__pair'>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <input className='input input-black input-phone' id='input-phone' name='phone' placeholder='Введите ваш телефон'></input>
-                                  <span className='error-black visible'>Пожалуйста заполните это поле</span>
+                                  <input className='input input-black input-phone input-check' id='input-phone-1' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
+                                  <img id='input-phone-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
+                                  <img id='input-phone-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
+                                  <span id='error-phone-1' className='error-black'>Пожалуйста заполните это поле</span>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <button className='button input-black input button-submit' id='button-submit' name='phone'>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  <button className='button input-black input button-submit' id='button-submit-1' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                               </div>
                           </div>
                       </div>
@@ -98,7 +194,7 @@ export default class Content extends React.Component {
                   </div>
                   <section className='content-wrapper__content__screen-3'>
                           <div className='content-wrapper__content__screen-3__wrapper'>
-                              <div className='content-wrapper__content__screen-3__commerce-block'>
+                              <div className='content-wrapper__content__screen-3__commerce-block fix-1'>
                                   <div className='content-wrapper__content__screen-3__commerce-block-pair'>
                                       <img className='content-wrapper__content__screen-3__commerce-block__commerce-icon2' src={require('./images/commerce-icon2.png')} alt='' height='106px' width=''/>
                                       <div className='content-wrapper__content__screen-3__commerce-block__description'>
