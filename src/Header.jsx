@@ -1,6 +1,5 @@
 import React from 'react';
-import Favicon from 'react-favicon';
-<Favicon url='../src/images/norbit.ico'/>
+
 import '../styles/index.scss';
 import '../styles/common/style_reset.css';
 import '../styles/fonts.scss';
