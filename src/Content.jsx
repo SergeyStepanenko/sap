@@ -35,43 +35,57 @@ export default class Content extends React.Component {
             return false;
         }
 
-        function checkIfInputIsEmail() {
-            if (field === 'email') {
-                return true;
-            }
-        }
-
-        function validateEmail(mail) {
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-                return true;
-            }
-            return false;
-        }
-
-
-        function fullCheck() {
-            if (checkIfInputIsEmail()) {
-                if (validateEmail(value)) {
-                    showSuccessIcon();
-                } else {
-                    showErrorIcon();
-                }
-            } else {
+        function nameCheck() {
+            if (field === 'name') {
                 if (checkIfEmpty()) {
                     showSuccessIcon();
                 } else {
                     showErrorIcon();
                 }
+                return true;
+            }
+
+            return false;
+        }
+
+        nameCheck();
+
+        function emailCheck() {
+            if (field === 'email') {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+                    showSuccessIcon();
+
+                    return true;
+                } else {
+                    showErrorIcon();
+
+                    return false;
+                }
             }
         }
 
-        fullCheck();
+        console.log(emailCheck());
+
+        function phoneCheck() {
+            if (field === 'phone') {
+                if (value.search(/[a-zа-яА-ЯёЁ]/g) === -1 && checkIfEmpty()) {
+                    showSuccessIcon();
+
+                    return true;
+                } else {
+                    showErrorIcon();
+
+                    return false;
+                }
+            }
+        }
+
+        console.log(phoneCheck());
 
         function checkSubmitButton() {
             if ((document.getElementById('input-name-checked-icon-' + form).classList[1] !== 'visible')
             || (document.getElementById('input-email-checked-icon-' + form).classList[1] !== 'visible')
             || (document.getElementById('input-phone-checked-icon-' + form).classList[1] !== 'visible')) {
-                console.log(false);
                 document.getElementById('button-submit-' + form).classList.add('disabled');
 
                 return false;
@@ -195,7 +209,6 @@ export default class Content extends React.Component {
                                       <img id='input-email-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                       <img id='input-email-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
                                       <span id='error-email-1' className='error-black'>Введите верный email</span>
-                                      {/* <span className='error-mail-black visible'>Введите верный email</span> */}
                                   </div>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair'>
@@ -203,7 +216,7 @@ export default class Content extends React.Component {
                                       <input className='input input-black input-phone input-check' id='input-phone-1' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
                                       <img id='input-phone-checked-icon-1' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                       <img id='input-phone-exclamation-icon-1' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                      <span id='error-phone-1' className='error-black'>Пожалуйста заполните это поле</span>
+                                      <span id='error-phone-1' className='error-black'>Пожалуйста введите только цифры</span>
                                   </div>
                                   <div className='content-wrapper__content__screen-2__form__pair__subpair'>
                                       <button className='button input-black input button-submit' id='button-submit-1' type='submit' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
