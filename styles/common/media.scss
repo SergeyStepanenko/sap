@@ -682,7 +682,7 @@ and (min-width : 768px) {
             display: flex;
             width: 1170px;
             margin: 0 auto;
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
             &__header {
                 max-width: 1160px;
                 margin: 0 auto;
@@ -788,7 +788,7 @@ and (min-width : 768px) {
     }
     .error-black {
         position: relative;
-        left: 22px;
+        left: 4px;
         top: -2px;
         width: 255px;
     }

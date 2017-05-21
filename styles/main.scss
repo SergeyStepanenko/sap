@@ -4,6 +4,17 @@ body {
   background: #fff;
 }
 
+.a,
+a {
+    text-decoration: none !important;
+ }
+
+ .ancor {
+     &__marketing {
+         height: 50px;
+     }
+ }
+
 .header {
     position: fixed;
     width: 100%;
@@ -314,7 +325,7 @@ body {
     color: #fff;
 }
 .padding {
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
 }
 .margin-top50px {
     margin-top: 50px;
@@ -404,7 +415,7 @@ body {
 .error-mail-white {
     position: relative;
     font-size: 12px;
-    font-family: ubuntu light;
+    font-family: $default;
     height: 10px;
     color: #d83e3e;
     visibility: hidden;

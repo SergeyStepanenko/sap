@@ -1,7 +1,5 @@
 import React from 'react';
-// import PopUp from './PopUp.jsx';
 
-// import '../src/mail/index.php';
 import '../styles/index.scss';
 
 export default class Content extends React.Component {
@@ -64,7 +62,7 @@ export default class Content extends React.Component {
             }
         }
 
-        console.log(emailCheck());
+        emailCheck();
 
         function phoneCheck() {
             if (field === 'phone') {
@@ -80,9 +78,9 @@ export default class Content extends React.Component {
             }
         }
 
-        console.log(phoneCheck());
+        phoneCheck();
 
-        function checkSubmitButton() {
+        function activateSubmitButton() {
             if ((document.getElementById('input-name-checked-icon-' + form).classList[1] !== 'visible')
             || (document.getElementById('input-email-checked-icon-' + form).classList[1] !== 'visible')
             || (document.getElementById('input-phone-checked-icon-' + form).classList[1] !== 'visible')) {
@@ -95,44 +93,44 @@ export default class Content extends React.Component {
             return true;
         }
 
-        checkSubmitButton();
+        activateSubmitButton();
     }
 
     submit(e) {
         const form = e.target.id.slice(-1);
+        const classListArray = document.getElementById('button-submit-' + form).classList;
 
-        if ((document.getElementById('input-name-checked-icon-' + form).classList[1] !== 'visible')
-        || (document.getElementById('input-email-checked-icon-' + form).classList[1] !== 'visible')
-        || (document.getElementById('input-phone-checked-icon-' + form).classList[1] !== 'visible')) {
-            console.log(false);
+        function sendData(formNumber) {
+            let company = '';
 
-            return false;
+            if (Number(formNumber) === 3) {
+                company = document.getElementById('input-company').value;
+            }
+
+            const name = document.getElementById('input-name-' + formNumber).value;
+            const phone = document.getElementById('input-phone-' + formNumber).value;
+            const email = document.getElementById('input-email-' + formNumber).value;
+            const http = new XMLHttpRequest();
+            const url = 'mail/index.php';
+            const params = 'name=' + name + '&email=' + email + '&phone=' + phone + '&company=' + company + '';
+            http.open('POST', url, true);
+
+            //Send the proper header information along with the request
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            http.onreadystatechange = function() {//Call a function when the state changes.
+                if(http.readyState === 4 && http.status === 200) {
+                    alert('Ваша заявка отправлена');
+                }
+            }
+
+            http.send(params);
         }
-        console.log(true);
 
-        // $("#myForm").submit(function(){
-        //   var error = "";
-        //
-        //   error += $(this).yaproField("phone", "p", "телефон введен неправильно");
-        //
-        //   var data = $("#myForm").serialize();
-        //
-        //   $.ajax({
-        //     type: "POST",
-        //     url: 'mail/index.php',
-        //     data: data,
-        //     success: function() {
-        //       // показать окно об успешной отправке и закрыть после
-        //       body.appendChild(popUpCover);
-        //       closeButton2 = document.querySelector('.closeButton2');
-        //       setTimeout(function addEventListener () {closeButton2.addEventListener('click', closePopUp, false)}, 1);
-        //     },
-        //   });
-        //
-        //   return false;
-        // });
-        //
-        // fieldPhone("[name=phone]"); //форматирование номера
+        if (classListArray[classListArray.length - 1] !== 'disabled') {
+            sendData(form);
+        }
+
 
         return true;
     }
@@ -173,30 +171,38 @@ export default class Content extends React.Component {
                       </div>
                       <div className='content-wrapper__content__screen-1__block-3'>
                           <div className='content-wrapper__content__screen-1__block-3__pair-1'>
-                              <div className='content-wrapper__content__screen-1__block-3__subpair'>
-                                  <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/commerce-icon.png')} alt='' height='106px' width='106px'/>
-                                  <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Commerce</p>
-                              </div>
-                              <div className='content-wrapper__content__screen-1__block-3__subpair'>
-                                  <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/marketing-icon.png')} alt='' height='106px' width='106px'/>
-                                  <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Marketing</p>
-                              </div>
+                              <a className='a' href='#commerce'>
+                                  <div className='content-wrapper__content__screen-1__block-3__subpair'>
+                                      <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/commerce-icon.png')} alt='' height='106px' width='106px'/>
+                                      <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Commerce</p>
+                                  </div>
+                              </a>
+                              <a className='a' href='#marketing'>
+                                  <div className='content-wrapper__content__screen-1__block-3__subpair'>
+                                      <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/marketing-icon.png')} alt='' height='106px' width='106px'/>
+                                      <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Marketing</p>
+                                  </div>
+                              </a>
                           </div>
                           <div className='content-wrapper__content__screen-1__block-3__pair-2'>
-                              <div className='content-wrapper__content__screen-1__block-3__subpair'>
-                                  <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/marketing-icon.png')} alt='' height='106px' width='106px'/>
-                                  <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Billing</p>
-                              </div>
-                              <div className='content-wrapper__content__screen-1__block-3__subpair'>
-                                  <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/marketing-icon.png')} alt='' height='106px' width='106px'/>
-                                  <p className='content-wrapper__content__screen-1__block-3__subpair__text'>SAP Cloud For Customer</p>
-                              </div>
+                              <a className='a' href='#billing'>
+                                  <div className='content-wrapper__content__screen-1__block-3__subpair'>
+                                      <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/billing-icon.png')} alt='' height='106px' width='106px'/>
+                                      <p className='content-wrapper__content__screen-1__block-3__subpair__text'>Billing</p>
+                                  </div>
+                              </a>
+                              <a className='a' href='#cloud'>
+                                  <div className='content-wrapper__content__screen-1__block-3__subpair'>
+                                      <img className='content-wrapper__content__screen-1__checked-icon' src={require('./images/cloud-icon.png')} alt='' height='106px' width='106px'/>
+                                      <p className='content-wrapper__content__screen-1__block-3__subpair__text'>SAP Cloud For Customer</p>
+                                  </div>
+                              </a>
                           </div>
                       </div>
                   </section>
 
                   <section className='content-wrapper__content__screen-2'>
-                      <form className='content-wrapper__content__screen-2__form' action='../src/mail/index.php' id='myForm1' method='post'>
+                      <div className='content-wrapper__content__screen-2__form' action='mail/index.php' id='myForm1' method='post'>
                               <div className='content-wrapper__content__screen-2__form__pair'>
                                   <div className='content-wrapper__content__screen-2__form__pair__subpair'>
                                       <input className='input input-black input-name input-check' id='input-name-1' name='name' placeholder='Введите ваше имя' onChange={this.formValidation}></input>
@@ -219,12 +225,12 @@ export default class Content extends React.Component {
                                       <span id='error-phone-1' className='error-black'>Пожалуйста введите только цифры</span>
                                   </div>
                                   <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                      <button className='button input-black input button-submit' id='button-submit-1' type='submit' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                      <button className='button input-black input button-submit disabled' id='button-submit-1' type='submit' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                                   </div>
                               </div>
-                      </form>
+                      </div>
                   </section>
-
+                  <a name="commerce"></a>
                   <div className='content-wrapper__content__screen-3__header'>
                       <div className='content-wrapper__content__screen-3__line'></div>
                       <h2 className='content-wrapper__content__screen-3__header-text content-wrapper__content__screen-3__header-text-advantages'>Наши возможности</h2>
@@ -258,7 +264,10 @@ export default class Content extends React.Component {
                       </div>
                   </section>
 
+                  <a name="commerce"></a>
                   <section className='content-wrapper__content__screen-4'>
+                      <a name="marketing"></a>
+                      <div className='ancor__marketing'></div>
                       <div className='content-wrapper__content__screen-4-green padding'>
                           <div className='content-wrapper__content__screen-4__wrapper'>
                               <div className='content-wrapper__content__screen-3__commerce-block'>
@@ -280,6 +289,8 @@ export default class Content extends React.Component {
                                   </ul>
                               </div>
                           </div>
+                          <a name="billing"></a>
+                          <div className='ancor__marketing'></div>
                       </div>
                       <div className='content-wrapper__content__screen-4 padding'>
                           <div className='content-wrapper__content__screen-4__wrapper'>
@@ -302,6 +313,8 @@ export default class Content extends React.Component {
                                   </ul>
                               </div>
                           </div>
+                          <a name="cloud"></a>
+                          <div className='ancor__marketing'></div>
                       </div>
                       <div className='content-wrapper__content__screen-4'>
                           <div className='content-wrapper__content__screen-4-orange padding'>
@@ -359,6 +372,7 @@ export default class Content extends React.Component {
                                       </div>
                                   </div>
                               </div>
+                              <div className='ancor__marketing'></div>
                           </div>
                       </div>
                   </section>
@@ -401,7 +415,6 @@ export default class Content extends React.Component {
                                   <img id='input-email-checked-icon-2' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                   <img id='input-email-exclamation-icon-2' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
                                   <span id='error-email-2' className='error-black'>Введите верный email</span>
-                                  {/* <span className='error-mail-black visible'>Введите верный email</span> */}
                               </div>
                           </div>
                           <div className='content-wrapper__content__screen-2__form__pair'>
@@ -409,10 +422,10 @@ export default class Content extends React.Component {
                                   <input className='input input-black input-phone input-check' id='input-phone-2' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
                                   <img id='input-phone-checked-icon-2' className='input-check__checked-icon' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                   <img id='input-phone-exclamation-icon-2' className='input-check__exclamation-icon' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                  <span id='error-phone-2' className='error-black'>Пожалуйста заполните это поле</span>
+                                  <span id='error-phone-2' className='error-black'>Пожалуйста введите только цифры</span>
                               </div>
                               <div className='content-wrapper__content__screen-2__form__pair__subpair'>
-                                  <button className='button input-black input button-submit' id='button-submit-2' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  <button className='button input-black input button-submit disabled' id='button-submit-2' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                               </div>
                           </div>
                       </div>
@@ -533,10 +546,10 @@ export default class Content extends React.Component {
                                           <input className='input input-white input-phone input-check' id='input-phone-3' name='phone' placeholder='Введите ваш телефон' onChange={this.formValidation}></input>
                                           <img id='input-phone-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                           <img id='input-phone-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
-                                          <span id='error-phone-3' className='error-white'>Пожалуйста заполните это поле</span>
+                                          <span id='error-phone-3' className='error-white'>Пожалуйста введите только цифры</span>
                                       </div>
                                       <div className='content-wrapper__content__screen-2__form-white__pair-white__subpair'>
-                                          <input className='input input-white input-phone input-check' id='input-phone-3' name='phone' placeholder='Название компании'></input>
+                                          <input className='input input-white input-phone input-check' id='input-company' name='phone' placeholder='Название компании'></input>
                                           <img id='input-phone-checked-icon-3' className='input-check__checked-icon-white' src={require('./images/checked.png')} alt='' height='13px' width='13px'/>
                                           <img id='input-phone-exclamation-icon-3' className='input-check__exclamation-icon-white' src={require('./images/exclamation.png')} alt='' height='12px' width='5px'/>
                                           <span id='error-phone-3' className='error-white'>Пожалуйста заполните это поле</span>
@@ -544,7 +557,7 @@ export default class Content extends React.Component {
                                   </div>
                               </div>
                               <div className='content-wrapper__content__screen-2__form-white__submit-white'>
-                                  <button className='button input-white input button-submit' id='button-submit-3' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
+                                  <button className='button input-white input button-submit disabled' id='button-submit-3' name='phone' onClick={this.submit}>ЗАКАЗАТЬ ТЕСТ-ДРАЙВ</button>
                               </div>
                           </section>
                       </div>

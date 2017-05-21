@@ -37,7 +37,7 @@
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.0",
     "extract-text-webpack-plugin": "^v2.0.0-rc.1",
-    "file-loader": "^0.10.0",
+    "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.26.0",
     "postcss-loader": "^1.2.2",
     "react-favicon": "0.0.8",
